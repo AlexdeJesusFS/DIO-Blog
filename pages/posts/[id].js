@@ -1,7 +1,5 @@
 import { getGlobalData } from '../../utils/global-data';
-import {
-  getPostBySlug,
-} from '../../utils/mdx-utils';
+import { getPostById } from '../../utils/mdx-utils';
 
 import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
@@ -60,7 +58,7 @@ export default function PostPage({
 
 export const getServerSideProps = async ({ params }) => {
   const globalData = getGlobalData();
-  const posts = await getPostBySlug(params.id);
+  const posts = await getPostById(params.id);
  
 
   return {
